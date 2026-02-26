@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Căinari — Raionul Căușeni</title>
+  <style>
+
+    /* ===== VARIABILE CSS ===== */
+    :root {
+      --primary:          #6b1a1a;
+      --primary-dark:     #550f0f;
+      --primary-deeper:   #3d0e0e;
+      --primary-darkest:  #200606;
+      --primary-light:    #8b2020;
+      --accent:           #c9920a;
+      --accent-dark:      #a87808;
+      --accent-light:     #f4d080;
+      --bg-page:          #fdf6ec;
+      --bg-card:          #ffffff;
+      --bg-card-warm:     #f8ecdc;
+      --bg-card-light:    #f5e8d0;
+      --border-card:      #e0c898;
+      --border-section:   #e8d5b0;
+      --text-dark:        #2a1a1a;
+      --text-body:        #3a2020;
+      --text-muted:       #444;
+      --text-light:       rgba(255,255,255,0.75);
+      --text-white-soft:  rgba(255,255,255,0.4);
+      --hero-sub:         #f0c8c8;
+      --header-sub:       #e0b8b8;
+      --header-name:      #e0b8b8;
+      --nav-link:         #fbe8e8;
+      --accent-line-h:    3px;
+      --border-left-w:    5px;
+      --radius-sm:        4px;
+      --gap-sm:           12px;
+      --gap-md:           20px;
+      --gap-lg:           24px;
+      --gap-xl:           60px;
+      --pad-section:      50px;
+      --pad-h:            40px;
+      --max-width:        1100px;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      background-color: var(--bg-page);
+      color: var(--text-dark);
+      scroll-behavior: smooth;
+    }
+
+    /* ===== HEADER ===== */
+    header.site-header {
+      background-color: var(--primary);
+      color: white;
+      padding: 16px var(--pad-h);
+    }
+
+    .header-sus {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .header-sus img.logo {
+      width: 70px;
+      height: 45px;
+      border-radius: var(--radius-sm);
+      flex-shrink: 0;
+    }
+
+    .header-sus h2 {
+      margin: 0;
+      font-size: 20px;
+      color: var(--accent-light);
+    }
+
+    .header-sus p {
+      margin: 4px 0 0 0;
+      font-size: 13px;
+      color: var(--header-name);
+    }
+
+    /* ===== NAVIGATIE ===== */
+    nav.navigatie {
+      background-color: var(--primary-dark);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav.navigatie a {
+      color: var(--nav-link);
+      text-decoration: none;
+      padding: 13px 22px;
+      font-size: 14px;
+      font-weight: bold;
+      display: block;
+    }
+
+    nav.navigatie a:hover {
+      background-color: var(--accent);
+      color: white;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background-color: var(--primary-light);
+      color: white;
+      padding: var(--pad-section) var(--pad-h);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      margin: 0 0 10px 0;
+      color: var(--accent-light);
+      animation: apareDeSus 0.8s ease both;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--hero-sub);
+      margin: 0;
+      animation: apareDeSus 1s ease 0.3s both;
+    }
+
+    @keyframes apareDeSus {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== STATISTICI ===== */
+    .statistici {
+      background-color: var(--accent);
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      flex: 1;
+      min-width: 100px;
+      text-align: center;
+      padding: 18px 10px;
+      border-right: 1px solid var(--accent-dark);
+      cursor: default;
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-numar {
+      font-size: 26px;
+      font-weight: bold;
+      color: var(--primary-deeper);
+    }
+
+    .stat-text {
+      font-size: 12px;
+      color: #5a2a00;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    /* ===== CONTAINER ===== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--pad-h);
+    }
+
+    /* ===== SECTIUNI ===== */
+    section.sectiune {
+      padding: var(--pad-section) 0;
+      border-bottom: 2px solid var(--border-section);
+    }
+
+    section.sectiune h2 {
+      font-size: 30px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .linie {
+      width: 50px;
+      height: var(--accent-line-h);
+      background-color: var(--accent);
+      margin-bottom: 28px;
+    }
+
+    section.sectiune p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-body);
+      margin-bottom: 14px;
+    }
+
+    /* ===== GRILE ===== */
+    .grila-2 { display: flex; gap: var(--gap-lg); }
+    .grila-2 > * { flex: 1; min-width: 0; }
+
+    .grila-3 { display: flex; gap: var(--gap-md); }
+    .grila-3 > * { flex: 1; min-width: 0; }
+
+    /* ===== CARD ORIZONTAL ===== */
+    article.card-orizontal {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-left: var(--border-left-w) solid var(--accent);
+      display: flex;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    article.card-orizontal .card-imagine {
+      width: 220px;
+      min-width: 220px;
+      height: 200px;
+      overflow: hidden;
+      background-color: var(--bg-card-light);
+      flex-shrink: 0;
+    }
+
+    article.card-orizontal .card-imagine img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    article.card-orizontal .card-continut {
+      padding: 20px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    article.card-orizontal h3 {
+      font-size: 19px;
+      color: var(--primary);
+      margin: 0 0 10px 0;
+    }
+
+    article.card-orizontal p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ===== CARD VERTICAL ===== */
+    article.card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-left: var(--border-left-w) solid var(--accent);
+      overflow: hidden;
+    }
+
+    article.card .card-imagine {
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      background-color: var(--bg-card-light);
+    }
+
+    article.card .card-imagine img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    article.card .card-continut { padding: 20px 24px 24px; }
+
+    article.card h3 {
+      font-size: 18px;
+      color: var(--primary);
+      margin: 0 0 10px 0;
+    }
+
+    article.card p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ===== LISTA ===== */
+    ul.lista {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0 0;
+    }
+
+    ul.lista li {
+      padding: 6px 0 6px 16px;
+      border-bottom: 1px dashed var(--border-card);
+      font-size: 15px;
+      color: #333;
+      position: relative;
+    }
+
+    ul.lista li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* ===== PANOU LATERAL ===== */
+    aside.panou {
+      background-color: var(--primary);
+      color: white;
+      padding: 28px;
+    }
+
+    aside.panou h3 {
+      font-size: 20px;
+      color: var(--accent-light);
+      margin: 0 0 16px 0;
+    }
+
+    .rand-info {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      font-size: 14px;
+      gap: 8px;
+    }
+
+    .rand-info:last-child { border-bottom: none; }
+    .rand-info span:first-child { color: var(--header-sub); }
+    .rand-info span:last-child { font-weight: bold; color: var(--accent-light); text-align: right; }
+
+    /* ===== ECONOMIE ===== */
+    section.economie-bloc {
+      background-color: var(--primary-light);
+      padding: var(--pad-section) var(--pad-h);
+      color: white;
+    }
+
+    section.economie-bloc h2 {
+      color: var(--accent-light);
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
+
+    section.economie-bloc .linie { background-color: var(--accent-light); }
+
+    section.economie-bloc p {
+      color: var(--hero-sub);
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      max-width: 800px;
+    }
+
+    .grila-eco { display: flex; gap: var(--gap-md); flex-wrap: wrap; }
+
+    article.card-eco {
+      flex: 1;
+      min-width: 200px;
+      background-color: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 22px;
+      text-align: center;
+    }
+
+    article.card-eco span {
+      font-size: 34px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    article.card-eco h4 { color: var(--accent-light); font-size: 16px; margin: 0 0 8px 0; }
+
+    article.card-eco p {
+      color: var(--text-light);
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ===== CONTACT ===== */
+    section.contact-bloc {
+      background-color: var(--primary-deeper);
+      color: white;
+      padding: var(--pad-section) var(--pad-h);
+      display: flex;
+      gap: var(--gap-xl);
+      align-items: flex-start;
+    }
+
+    .contact-stanga { flex: 1; }
+    .contact-stanga h2 { color: var(--accent-light); font-size: 28px; margin: 0 0 14px 0; }
+    .contact-stanga p { color: var(--header-sub); font-size: 15px; line-height: 1.8; margin: 0; }
+
+    .contact-dreapta { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+
+    .contact-rand {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--gap-sm);
+      padding: 10px;
+      border-radius: var(--radius-sm);
+    }
+
+    .contact-rand .text strong {
+      display: block;
+      color: var(--accent-light);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+
+    .contact-rand .text span { color: var(--header-sub); font-size: 14px; }
+
+    /* ===== FOOTER ===== */
+    footer.site-footer {
+      background-color: var(--primary-darkest);
+      color: var(--text-white-soft);
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+    }
+
+    footer.site-footer span { color: var(--accent); }
+
+
+    /*RESPONSIVE — TABLETĂ  ≤ 900px */
+ 
+    @media (max-width: 900px) {
+
+      :root {
+        --pad-h:       24px;
+        --pad-section: 36px;
+        --gap-xl:      36px;
+      }
+
+      .header-sus h2 { font-size: 17px; }
+
+      .hero h1 { font-size: 38px; }
+      .hero p  { font-size: 16px; }
+
+      /* Statistici: 3 pe rând (wrap natural) */
+      .stat { min-width: 33.33%; border-bottom: 1px solid var(--accent-dark); }
+
+      /* Grila 2 → coloană */
+      .grila-2 { flex-direction: column; }
+
+      /* Grila 3 → 2 coloane */
+      .grila-3 { flex-wrap: wrap; }
+      .grila-3 > * { flex: 1 1 calc(50% - var(--gap-md)); }
+
+      /* Card orizontal: imagine mai mică */
+      article.card-orizontal .card-imagine {
+        width: 160px;
+        min-width: 160px;
+        height: auto;
+        min-height: 160px;
+      }
+
+      /* Carduri economie → 2 pe rând */
+      article.card-eco { flex: 1 1 calc(50% - var(--gap-md)); }
+
+      /* Contact → coloană */
+      section.contact-bloc {
+        flex-direction: column;
+        gap: var(--gap-lg);
+      }
+    }
+
+
+    /*  RESPONSIVE — MOBIL  ≤ 600px */
+    @media (max-width: 600px) {
+
+      :root {
+        --pad-h:       16px;
+        --pad-section: 28px;
+        --gap-md:      14px;
+        --gap-lg:      16px;
+        --gap-xl:      24px;
+      }
+
+      .header-sus img.logo { width: 48px; height: 32px; }
+      .header-sus h2 { font-size: 15px; }
+      .header-sus p  { font-size: 11px; }
+
+
+      nav.navigatie a { padding: 10px 14px; font-size: 13px; }
+
+      /* Hero */
+      .hero { padding: 30px var(--pad-h); }
+      .hero h1 { font-size: 30px; }
+      .hero p  { font-size: 14px; }
+
+      /* Statistici: 2 pe rând */
+      .stat { min-width: 50%; }
+      .stat:nth-child(2n) { border-right: none; }
+
+      /* Titluri secțiuni */
+      section.sectiune h2 { font-size: 22px; }
+      section.sectiune p  { font-size: 15px; }
+
+      /* Grila 3 → o coloană */
+      .grila-3 > * { flex: 1 1 100%; }
+
+      /* Card orizontal → vertical (imagine sus, text jos) */
+      article.card-orizontal { flex-direction: column; }
+
+      article.card-orizontal .card-imagine {
+        width: 100%;
+        min-width: 0;
+        height: 180px;
+      }
+
+      article.card-orizontal .card-continut { padding: 16px; }
+      article.card-orizontal h3 { font-size: 17px; }
+      article.card-orizontal p  { font-size: 14px; }
+
+      /* Panou */
+      aside.panou { padding: 20px 16px; }
+      aside.panou h3 { font-size: 17px; }
+      .rand-info { font-size: 13px; }
+
+      /* Economie → o coloană */
+      section.economie-bloc h2 { font-size: 22px; }
+      section.economie-bloc p  { font-size: 15px; }
+      article.card-eco { flex: 1 1 100%; }
+
+      /* Contact */
+      .contact-stanga h2 { font-size: 22px; }
+      .contact-stanga p  { font-size: 14px; }
+      .contact-rand .text span { font-size: 13px; }
+
+      footer.site-footer { font-size: 12px; padding: 16px; }
+    }
+
+
+    /* =============================================
+       RESPONSIVE — MOBIL MIC  ≤ 380px
+    ============================================= */
+    @media (max-width: 380px) {
+
+      .hero h1 { font-size: 24px; }
+      nav.navigatie a { padding: 9px 10px; font-size: 12px; }
+
+      /* Statistici → o coloană */
+      .stat { min-width: 100%; border-right: none; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-sus">
+      <img class="logo" src="steag.jpg" alt="Steagul Moldovei">
+      <div>
+        <h2>Primăria Orașului Căinari</h2>
+        <p>Raionul Căușeni, Republica Moldova</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATIE -->
+  <nav class="navigatie" aria-label="Navigație principală">
+    <a href="#despre">Despre</a>
+    <a href="#geografie">Geografie</a>
+    <a href="#educatie">Educație</a>
+    <a href="#economie">Economie</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <div class="hero" role="banner">
+      <h1>Căinari</h1>
+      <p>Oraș cu suflet moldovenesc — Raionul Căușeni</p>
+    </div>
+
+    <!-- STATISTICI -->
+    <div class="statistici" aria-label="Date statistice">
+      <div class="stat"><div class="stat-numar">~4.200</div><div class="stat-text">Locuitori</div></div>
+      <div class="stat"><div class="stat-numar">51 m</div><div class="stat-text">Altitudine</div></div>
+      <div class="stat"><div class="stat-numar">50 km</div><div class="stat-text">Până la Chișinău</div></div>
+      <div class="stat"><div class="stat-numar">37 km</div><div class="stat-text">Până la Căușeni</div></div>
+      <div class="stat"><div class="stat-numar">1455</div><div class="stat-text">Prima atestare</div></div>
+    </div>
+
+    <!-- DESPRE -->
+    <section class="sectiune" id="despre" aria-labelledby="titlu-despre">
+      <div class="container">
+        <h2 id="titlu-despre">Istoria și identitatea orașului</h2>
+        <div class="linie"></div>
+        <div class="grila-2">
+          <div>
+            <p>Căinari este un oraș cu statut urban din raionul Căușeni, situat în partea central-sudică a Republicii Moldova. Localitatea a evoluat dintr-un sat cu caracter agricol pronunțat într-un centru urban funcțional, cu infrastructură diversificată și servicii publice moderne. Istoria sa este strâns legată de destinul întregii regiuni Căușeni, atestată documentar încă din anul 1455.</p>
+            <p>În perioada medievală, teritoriul actual al raionului Căușeni se afla pe rutele comerciale și militare care legau sudul Basarabiei de restul Moldovei Istorice. Influențele otomane, rusești și românești s-au succedat de-a lungul secolelor, lăsând urme vizibile în arhitectura și cultura populației locale.</p>
+            <p>Conform recensământului din 2004, populația orașului era de 4.184 de locuitori, din care 2.066 bărbați și 2.118 femei. Comunitatea este cu o cultură tradițională vie, exprimată prin festivaluri folclorice și gastronomie autentică.</p>
+            <p>După proclamarea independenței Republicii Moldova în 1991, Căinari s-a adaptat noilor realități economice și administrative, primind statut de oraș și continuând să-și dezvolte serviciile publice, educația și viața culturală.</p>
+          </div>
+          <aside class="panou" aria-label="Date generale">
+            <h3>Date generale</h3>
+            <div class="rand-info"><span>Statut</span><span>Oraș</span></div>
+            <div class="rand-info"><span>Raion</span><span>Căușeni</span></div>
+            <div class="rand-info"><span>Țară</span><span>Republica Moldova</span></div>
+            <div class="rand-info"><span>Populație</span><span>~4.184 loc.</span></div>
+            <div class="rand-info"><span>Latitudine</span><span>46.6789° N</span></div>
+            <div class="rand-info"><span>Longitudine</span><span>29.0461° E</span></div>
+            <div class="rand-info"><span>Altitudine</span><span>51 m</span></div>
+            <div class="rand-info"><span>Dist. Chișinău</span><span>38 km</span></div>
+            <div class="rand-info"><span>Dist. Căușeni</span><span>41 km</span></div>
+            <div class="rand-info"><span>Administrare</span><span>Primăria Căinari</span></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- GEOGRAFIE -->
+    <section class="sectiune" id="geografie" aria-labelledby="titlu-geografie">
+      <div class="container">
+        <h2 id="titlu-geografie">Poziție geografică</h2>
+        <div class="linie"></div>
+        <p>Căinari beneficiează de o poziție geografică strategică, aflat la intersecția principalelor căi rutiere din sudul Republicii Moldova, la distanță relativ mică față de capitala Chișinău.</p>
+        <div class="grila-3">
+          <article class="card">
+            <div class="card-imagine"><img src="regiune.jpg" alt="Regiune"></div>
+            <div class="card-continut">
+              <h3>Regiune</h3>
+              <p>Sudul Republicii Moldova, bazinul fluviului Nistru, câmpie ușor ondulată la 51 m altitudine.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-imagine"><img src="clima.jpg" alt="Climă"></div>
+            <div class="card-continut">
+              <h3>Climă</h3>
+              <p>Continentală moderată, veri calde și ierni blânde. Precipitații anuale de aprox. 450–500 mm.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-imagine"><img src="drumuri.jpg" alt="Drumuri"></div>
+            <div class="card-continut">
+              <h3>Conexiuni rutiere</h3>
+              <p>Legătură directă cu Chișinău (38 km), Căușeni (41 km) și acces la frontiera cu Ucraina.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATIE -->
+    <section class="sectiune" id="educatie" aria-labelledby="titlu-educatie">
+      <div class="container">
+        <h2 id="titlu-educatie">Educație, cultură și viață socială</h2>
+        <div class="linie"></div>
+        <p>Orașul dispune de o infrastructură educațională și culturală solidă, care răspunde nevoilor comunității și păstrează vii tradițiile locale.</p>
+
+        <article class="card-orizontal">
+          <div class="card-imagine"><img src="educatie.jpg" alt="Educație"></div>
+          <div class="card-continut">
+            <h3>Educație</h3>
+            <p>Căinari dispune de instituții de învățământ preșcolar și primar-gimnazial. Un reper cultural important este Școala de Muzică din Căinari, care oferă cursuri de instrumente muzicale, teorie muzicală și ansamblu vocal pentru copii și tineri.</p>
+            <ul class="lista">
+              <li>Grădinițe de copii</li>
+              <li>Liceul Teorectic "Alexei Mateevici"</li>
+              <li>Școala de Muzică Căinari</li>
+              <li>Acces la instituțiile din Căușeni și Chișinău</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card-orizontal">
+          <div class="card-imagine"><img src="muzeu.jpg" alt="Muzeu"></div>
+          <div class="card-continut">
+            <h3>Muzeul "Alexei Mateevici" din Căinari</h3>
+            <p>Muzeul local din Căinari păstrează și expune obiecte, documente și fotografii care reflectă istoria și tradițiile comunității de-a lungul secolelor. Vizitatorii pot descoperi aici unelte tradiționale, costume populare și mărturii ale vieții cotidiene din trecut.</p>
+          </div>
+        </article>
+
+        <article class="card-orizontal">
+          <div class="card-imagine"><img src="sanatate.jpg" alt="Sănătate"></div>
+          <div class="card-continut">
+            <h3>Sănătate</h3>
+            <p>Locuitorii beneficiează de servicii medicale primare prin Centrul de Sănătate local. Raionul Căușeni dispune de un spital cu 292 de paturi, 19 unități de medicină de familie și 13 centre de sănătate.</p>
+            <ul class="lista">
+              <li>Centru de Sănătate Căinari</li>
+              <li>Medici de familie</li>
+              <li>Acces la Spitalul Raional Căușeni</li>
+              <li>Farmacii locale</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card-orizontal">
+          <div class="card-imagine"><img src="sport.jpg" alt="Sport"></div>
+          <div class="card-continut">
+            <h3>Sport și recreere</h3>
+            <p>Comunitatea promovează sportul în rândul tinerilor. Raionul dispune de Centrul de Tineret și Sport din Căușeni, inaugurat în 2013, cu săli pentru gimnastică și lupte marțiale.</p>
+            <ul class="lista">
+              <li>Teren de sport local</li>
+              <li>Echipe sportive de amatori</li>
+              <li>Activități pentru tineret</li>
+              <li>Acces la facilitățile raionale</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card-orizontal">
+          <div class="card-imagine"><img src="biserica.jpg" alt="Biserică"></div>
+          <div class="card-continut">
+            <h3>Biserica locală Sfinții Arhangheli Mihail și Gavriil</h3>
+            <p>Lăcașul de cult ortodox al orașului reprezintă centrul vieții spirituale al comunității, organizând slujbe regulate și activități religioase care reunesc generații de credincioși din Căinari și din localitățile înconjurătoare.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ECONOMIE -->
+    <section class="economie-bloc" id="economie" aria-labelledby="titlu-economie">
+      <div class="container">
+        <h2 id="titlu-economie">Economie și activitate</h2>
+        <div class="linie"></div>
+        <p>Economia localității Căinari se bazează în principal pe agricultură, comerț și servicii, reflectând profilul economic al raionului Căușeni — una dintre zonele cu cel mai mare potențial agricol din Moldova. Raionul are 15.721 de companii înregistrate și un salariu mediu brut lunar de aproximativ 9.371 lei.</p>
+        <div class="grila-eco">
+          <article class="card-eco"><span>🌾</span><h4>Agricultură</h4><p>Căinari este o localitate cu profil agricol pronunțat, unde se cultivă în principal grâu, porumb, floarea-soarelui și orz. De asemenea, sunt dezvoltate plantațiile de livezi și legumicultura.</p></article>
+          <article class="card-eco"><span>🍷</span><h4>Viticultură</h4><p>În localitate și în împrejurimi sunt cultivate soiuri tehnice de struguri utilizați la producerea vinurilor albe și roșii, viticultura reprezentând o activitate agricolă tradițională a populației.</p></article>
+          <article class="card-eco"><span>🏪</span><h4>Comerț</h4><p>În orașul Căinari activează magazine alimentare și mixte, piețe locale, farmacii și unități de alimentație publică.</p></article>
+          <article class="card-eco"><span>🚛</span><h4>Transport</h4><p>Amplasare favorabilă pe ruta Chișinău–Căușeni, cu acces spre Ucraina și Giurgiulești.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-bloc" id="contact" aria-labelledby="titlu-contact">
+      <div class="contact-stanga">
+        <h2 id="titlu-contact">Primăria Orașului Căinari</h2>
+        <p>Primăria orașului Căinari este instituția administrației publice locale care asigură servicii cetățenilor, gestionează patrimoniul municipal și coordonează dezvoltarea comunității. Suntem la dispoziția tuturor cetățenilor și vizitatorilor noștri.</p>
+      </div>
+      <address class="contact-dreapta">
+        <div class="contact-rand">
+          <div class="text"><strong>Adresă</strong><span>Orașul Căinari, Raionul Căușeni, Republica Moldova</span></div>
+        </div>
+        <div class="contact-rand">
+          <div class="text"><strong>Program</strong><span>Luni – Vineri: 08:00 – 17:00</span></div>
+        </div>
+        <div class="contact-rand">
+          <div class="text"><strong>Raion</strong><span>causeni.md</span></div>
+        </div>
+        <div class="contact-rand">
+          <div class="text"><strong>Coordonate GPS</strong><span>46.6789°N, 29.0461°E</span></div>
+        </div>
+      </address>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2025 Primăria Orașului <span>Căinari</span> — Raionul Căușeni, Republica Moldova</p>
+  </footer>
+
+</body>
+</html>
